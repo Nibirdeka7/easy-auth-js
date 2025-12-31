@@ -1,0 +1,40 @@
+{
+  "name": "easy-auth",
+  "version": "1.0.0",
+  "description": "Plug-and-play authentication package for Node.js/Express",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "node test/test-client.js",
+    "test:server": "node test/test-server.js",
+    "test:all": "concurrently \"npm run test:server\" \"npm run test\""
+  },
+  "keywords": [
+    "authentication",
+    "auth",
+    "express",
+    "nodejs",
+    "jwt",
+    "mongodb"
+  ],
+  "author": "Nibir Deka",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.5.0",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^7.0.12"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "concurrently": "^9.2.1",
+    "jest": "^30.2.0",
+    "nodemon": "^3.0.1"
+  }
+}
