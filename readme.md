@@ -18,3 +18,4 @@ Abstracts all common boilerplate code for user authentication.
 
 ```bash
 npm install easy-auth
+
