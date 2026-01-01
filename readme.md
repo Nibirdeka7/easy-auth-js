@@ -10,13 +10,13 @@ Handle user authentication, email verification, password resets, and protected r
 ## 🚀 Quick Start
 
 ### 📦 Installation
-`
-npm install @nibir_dev/authflow
-`
-### Configuration
-
+```bash
+  npm i @nibir_dev/authflow
 ```
 ---
+### Configuration
+
+```javascript
 import express from 'express';
 import authflow from '@nibir_dev/authflow';
 
@@ -35,40 +35,44 @@ authflow.init({
   }
 });
 
+
 // Mount authentication routes
 app.use('/api/auth', authflow.router);
 
 app.listen(5000, () => {
   console.log('Server running at http://localhost:5000');
 });
-`
-## Features
-✅ User registration with email verification
-✅ Secure login & logout using JWT
-✅ Password reset flow
-✅ Email notifications (welcome, verification, reset password)
-✅ Protected route middleware
-✅ HTTP-only secure cookies
-✅ MongoDB integration
-✅ CORS ready
-✅ Production security best practices
-✅ Zero boilerplate code
+
+```
+---
+## How to integrate in frontend
+```javascript
+await fetch('http://localhost:5000/api/auth/login', {
+  method: 'POST',
+  credentials: 'include',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    email: 'user@example.com',
+    password: 'password123'
+  })
+});
+
+```
+## Routes
+```javascript
+router.post('/signup', signup);
+router.post('/verify-email', verifyEmail);
+router.post('/login', login);
+router.post('/forgot-password', forgotPassword);
+router.post('/reset-password/:token', resetPassword);
 
 
-## Philosophy
-AuthFlow is designed to be:
-
-Plug & Play
-
-Secure by default
-
-Developer-first
-
-Production ready
-
-No repeated auth logic. No reinventing the wheel.
-Just install, configure, and ship. 🚢
-
+router.post('/logout', protect, logout);
+router.get('/check-auth', protect, checkAuth);
+``` 
 ## Author
 Nibir Deka
 📦 npm: @nibir_dev/authflow
+ [npm](https://www.npmjs.com/package/@nibir_dev/authflow)
