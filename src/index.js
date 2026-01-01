@@ -2,16 +2,15 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 
-import authRoutes from "./routes/auth.route.js"; // Fixed import
+import authRoutes from "./routes/auth.route.js"; 
 
 let isInitialized = false;
 let isConnected = false;
 
 const init = async (config) => {    
     if(isInitialized){
-        console.warn('easy-auth is already initialized');
-        return;
-    }
+        console.warn('AuthFlow is already initialized');
+        return;    }
     if(!config.mongoURI){
         throw new Error('MongoDB URI is required');
     }
@@ -54,7 +53,7 @@ const init = async (config) => {
     }
     
     isInitialized = true;
-    console.log('easy-auth initialized successfully');
+    console.log('AuthFlow initialized successfully');
 };
 
 const createAuthRouter = () => {

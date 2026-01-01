@@ -64,7 +64,7 @@ class MailService {
     } catch (error) {
       console.error(` Failed to send verification email to ${email}:`, error.message);
       console.log(` OTP for ${email}: ${otp}`);
-      return Promise.resolve(); // Don't crash the app
+      return Promise.resolve(); 
     }
   }
 

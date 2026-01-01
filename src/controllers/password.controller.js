@@ -2,7 +2,6 @@ import crypto from 'crypto';
 import { User } from '../models/user.model.js';
 import { getMailService } from "../utils/mailService.js";
 
-
 export const forgotPassword = async (req, res) => {
     const mailService = getMailService();
   
