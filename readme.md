@@ -15,7 +15,8 @@ npm install @nibir_dev/authflow
 `
 ### Configuration
 
-`
+```
+---
 import express from 'express';
 import authflow from '@nibir_dev/authflow';
 
