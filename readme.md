@@ -1,4 +1,4 @@
-# easy-auth
+# authflow
 
 A plug-and-play authentication package for Node.js/Express developers. 
 Abstracts all common boilerplate code for user authentication.
@@ -17,5 +17,5 @@ Abstracts all common boilerplate code for user authentication.
 ## Installation
 
 ```bash
-npm install easy-auth
+npm i @nibir_dev/authflow
 

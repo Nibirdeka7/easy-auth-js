@@ -1,17 +1,14 @@
 {
-  "name": "auth-simplified",
+  "name": "@nibir_dev/authflow",
   "version": "1.0.0",
   "description": "Plug-and-play authentication package for Node.js/Express",
-  "main": "src/index.js",
-  "type": "module",
   "publishConfig": {
     "access": "public"
   },
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "test": "node test/test-client.js",
-    "test:server": "node test/test-server.js",
-    "test:all": "concurrently \"npm run test:server\" \"npm run test\""
+    "dev": "nodemon src/index.js"
   },
   "keywords": [
     "authentication",
