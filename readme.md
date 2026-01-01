@@ -10,11 +10,12 @@ Handle user authentication, email verification, password resets, and protected r
 ## 🚀 Quick Start
 
 ### 📦 Installation
-```bash
+`
 npm install @nibir_dev/authflow
-⚡ Basic Setup (30 seconds)
-js
-Copy code
+`
+### Configuration
+
+`
 import express from 'express';
 import authflow from '@nibir_dev/authflow';
 
@@ -39,7 +40,8 @@ app.use('/api/auth', authflow.router);
 app.listen(5000, () => {
   console.log('Server running at http://localhost:5000');
 });
-📋 Features
+`
+## Features
 ✅ User registration with email verification
 ✅ Secure login & logout using JWT
 ✅ Password reset flow
@@ -51,24 +53,8 @@ app.listen(5000, () => {
 ✅ Production security best practices
 ✅ Zero boilerplate code
 
-🔧 Configuration
-Required Configuration
-js
-Copy code
-authflow.init({
-  // Required
-  mongoURI: 'your-mongodb-connection-string',
-  jwtSecret: 'your-jwt-secret-key',
 
-  // Required for email features
-  mail: {
-    host: 'smtp.gmail.com',
-    port: 587,
-    user: 'your-email@gmail.com',
-    pass: 'your-app-password'
-  }
-});
-🧠 Philosophy
+## Philosophy
 AuthFlow is designed to be:
 
 Plug & Play
@@ -82,6 +68,6 @@ Production ready
 No repeated auth logic. No reinventing the wheel.
 Just install, configure, and ship. 🚢
 
-📌 Author
+## Author
 Nibir Deka
 📦 npm: @nibir_dev/authflow
