@@ -1,21 +1,87 @@
-# AuthFlow
+# 📖 AuthFlow Backend – Complete Documentation
 
-A plug-and-play authentication package for Node.js/Express developers. 
-Abstracts all common boilerplate code for user authentication.
+**@nibir_dev/authflow**
 
-## Features
+A **production-ready, zero-configuration authentication system** for **Express.js + MongoDB**.  
+Handle user authentication, email verification, password resets, and protected routes with minimal code.
 
-- User Signup with email verification
-- Email verification via OTP
-- User Login with JWT
-- Password Reset flow
-- Protected routes middleware
-- HTTP only cookies for secure token storage
-- MongoDB integration
-- Email notifications via SMTP
+---
 
-## Installation
+## 🚀 Quick Start
 
+### 📦 Installation
 ```bash
-npm i @nibir_dev/authflow
+npm install @nibir_dev/authflow
+⚡ Basic Setup (30 seconds)
+js
+Copy code
+import express from 'express';
+import authflow from '@nibir_dev/authflow';
 
+const app = express();
+app.use(express.json());
+
+// Initialize AuthFlow with your config
+authflow.init({
+  mongoURI: 'mongodb://localhost:27017/your-database',
+  jwtSecret: 'your-super-secret-jwt-key',
+  mail: {
+    host: 'smtp.gmail.com',
+    port: 587,
+    user: 'your-email@gmail.com',
+    pass: 'your-app-password'
+  }
+});
+
+// Mount authentication routes
+app.use('/api/auth', authflow.router);
+
+app.listen(5000, () => {
+  console.log('Server running at http://localhost:5000');
+});
+📋 Features
+✅ User registration with email verification
+✅ Secure login & logout using JWT
+✅ Password reset flow
+✅ Email notifications (welcome, verification, reset password)
+✅ Protected route middleware
+✅ HTTP-only secure cookies
+✅ MongoDB integration
+✅ CORS ready
+✅ Production security best practices
+✅ Zero boilerplate code
+
+🔧 Configuration
+Required Configuration
+js
+Copy code
+authflow.init({
+  // Required
+  mongoURI: 'your-mongodb-connection-string',
+  jwtSecret: 'your-jwt-secret-key',
+
+  // Required for email features
+  mail: {
+    host: 'smtp.gmail.com',
+    port: 587,
+    user: 'your-email@gmail.com',
+    pass: 'your-app-password'
+  }
+});
+🧠 Philosophy
+AuthFlow is designed to be:
+
+Plug & Play
+
+Secure by default
+
+Developer-first
+
+Production ready
+
+No repeated auth logic. No reinventing the wheel.
+Just install, configure, and ship. 🚢
+
+📌 Author
+Nibir Deka
+📦 npm: @nibir_dev/authflow
